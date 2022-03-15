@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "ESNext",
+        "target": "ES2015",
+        "noImplicitAny": true,
+        "noEmitOnError": true,
+        "removeComments": true,
+        "strict": true,
+        "outDir": "wwwroot/js/",
+        "rootDir": "Scripts"
+    },
+    "include": [ "**/*.ts" ],
+    "compileOnSave": true
+}
