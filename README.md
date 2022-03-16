@@ -18,7 +18,7 @@
 - Service to use on whole site
 
 # Examples
-- [BlazorCookies.Demo](https://github.com/speyck/blazor-cookies/edit/main/BlazorCookies/BlazorCookies.Demo) - this serves as a Test Project but you can use it as a demo
+- [BlazorCookies.Demo](https://github.com/speyck/blazor-cookies/edit/main/BlazorCookies.Demo) - this serves as a Test Project but you can use it as a demo
 
 # Browser Support
 ###### This will follow with the first release
