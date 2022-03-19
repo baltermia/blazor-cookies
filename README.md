@@ -7,7 +7,7 @@
 
 ---
 
-### ⚠️ BlazorCookies is currently in developement and has no releases. Documentation will follow with the first release.
+### ⚠️ BlazorCookies is currently in developement and has no releases. Documentation will follow with the first release. [Kanban Board](https://github.com/speyck/blazor-cookies/projects/1)
 ---
 <br />
 <br />
