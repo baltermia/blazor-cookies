@@ -17,6 +17,8 @@
 - No JavaScript and JSInterop needed
 - Service to use on whole site
 
+💡 Want a new feature to be implemented?  Go ahead and create a [new Issue](https://github.com/speyck/blazor-cookies/issues/new/choose)!
+
 # Examples
 - [BlazorCookies.Demo](https://github.com/speyck/blazor-cookies/edit/main/BlazorCookies.Demo) - this serves as a Test Project but you can use it as a demo
 
