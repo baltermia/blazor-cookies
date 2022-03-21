@@ -20,7 +20,7 @@
 💡 Want a new feature to be implemented?  Go ahead and create a [new Issue](https://github.com/speyck/blazor-cookies/issues/new/choose)!
 
 # Examples
-- [BlazorCookies.Demo](https://github.com/speyck/blazor-cookies/edit/main/BlazorCookies.Demo) - this serves as a Test Project but you can use it as a demo
+- [BlazorCookies.Demo](https://github.com/speyck/blazor-cookies/edit/main/BlazorCookies.Demo)
 
 # Browser Support
 ###### This will follow with the first release
