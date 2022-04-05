@@ -7,7 +7,7 @@
 
 ---
 
-### ⚠️ BlazorCookies is currently in developement and has no releases. Documentation will follow with the first release. [Kanban Board](https://github.com/speyck/blazor-cookies/projects/1)
+### ⚠️ BlazorCookies is currently in developement and has no releases. Documentation will follow with the first release. [Kanban Board](https://github.com/baltermia/blazor-cookies/projects/1)
 ---
 <br />
 <br />
@@ -17,10 +17,10 @@
 - No JavaScript and JSInterop needed
 - Service to use on whole site
 
-💡 Want a new feature to be implemented?  Go ahead and create a [new Issue](https://github.com/speyck/blazor-cookies/issues/new/choose)!
+💡 Want a new feature to be implemented?  Go ahead and create a [new Issue](https://github.com/baltermia/blazor-cookies/issues/new/choose)!
 
 # Examples
-- [BlazorCookies.Demo](https://github.com/speyck/blazor-cookies/edit/main/BlazorCookies.Demo)
+- [BlazorCookies.Demo](https://github.com/baltermia/blazor-cookies/edit/main/BlazorCookies.Demo)
 
 # Browser Support
 ###### This will follow with the first release
