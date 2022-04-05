@@ -1,4 +1,5 @@
 ﻿using System;
+using BlazorCookies.Enums;
 
 namespace BlazorCookies.Models;
 
@@ -23,6 +24,11 @@ public class Cookie
     public string Domain { get; set; }
 
     /// <summary>
+    /// Representing the first-party domain associated with the cookie. This will be an empty string if the cookie was set while first-party isolation was off.
+    /// </summary>
+    public string FirstPartyDomain { get; set; }
+
+    /// <summary>
     /// True if the cookie is a host-only cookie (i.e. a request’s host must exactly match the domain of the cookie).
     /// </summary>
     public bool IsHostOnly { get; set; }
@@ -43,17 +49,22 @@ public class Cookie
     public bool IsHttpOnly { get; set; }
 
     /// <summary>
-    /// True if the cookie is a session cookie, as opposed to a persistent cookie with an expiration date.
+    /// True if the cookie is a session cookie, or false if it is a persistent cookie with an expiration date.
     /// </summary>
     public bool IsSession { get; set; }
 
     /// <summary>
-    /// The expiration date of the cookie as the number of seconds since the UNIX epoch. Not provided for session cookies.
+    /// Indicates the SameSite state of the cookie.
+    /// </summary>
+    public SameSiteStatus SameSite { get; set; }
+
+    /// <summary>
+    /// The expiration date of the cookie. Not provided for session cookies.
     /// </summary>
     public DateTime? Expiration { get; set; }
 
     /// <summary>
-    /// The ID of the cookie store containing this cookie, as provided in GetAllCookieStores().
+    /// The ID of the cookie store containing this cookie.
     /// </summary>
     public string StoreId { get; set; }
 }
