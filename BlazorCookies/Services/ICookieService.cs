@@ -22,6 +22,17 @@ public interface ICookieService
     public Cookie Get(string url, string name, string storeId = null);
 
     /// <summary>
+    /// Retrieves a single <see cref="CookieStore" />, given its name and URL.
+    /// 
+    /// If more than one <see cref="Cookie" /> with the same name exists for a given URL, the one with the longest path will be returned. 
+    /// For Cookies with the same path length, the Cookie with the earliest creation time will be returned. 
+    /// If no matching Cookie could be found, null is returned.
+    /// </summary>
+    /// <param name="details"><see cref="CookieDetails"/> object containing details that can be used to match cookies to be retrieved.</param>
+    /// <returns>A single <see cref="Cookie" />, given its <see cref="CookieDetails"/></returns>
+    public Cookie Get(CookieDetails details);
+
+    /// <summary>
     /// Retrieves all <see cref="Cookie" /> objects from a single <see cref="CookieStore" /> that match the given information.
     /// </summary>
     /// <param name="store">The <see cref="CookieStore" /> that contains the <see cref="Cookie" /> objects to be returned</param>
