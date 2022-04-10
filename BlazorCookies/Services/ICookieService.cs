@@ -1,4 +1,4 @@
-﻿using BlazorCookies.Models;
+using BlazorCookies.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -96,5 +96,4 @@ public interface ICookieService
     /// <param name="details"><see cref="CookieDetails" /> specifying the <see cref="Cookie"/> to be deleted.</param>
     /// <returns>A <see cref="Task"/> containing a <see cref="Cookie" /> object containing details about the cookie that's been deleted. If the call fails for any reason, null will be returned.</returns>
     public Task<Cookie> RemoveAsync(CookieDetails details);
-
 }
