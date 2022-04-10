@@ -24,11 +24,6 @@ public class Cookie
     public string Domain { get; set; }
 
     /// <summary>
-    /// Representing the first-party domain associated with the cookie. This will be an empty string if the cookie was set while first-party isolation was off.
-    /// </summary>
-    public string FirstPartyDomain { get; set; }
-
-    /// <summary>
     /// True if the cookie is a host-only cookie (i.e. a request’s host must exactly match the domain of the cookie).
     /// </summary>
     public bool IsHostOnly { get; set; }
