@@ -9,6 +9,18 @@ namespace BlazorCookies.Services;
 public interface ICookieService
 {
     /// <summary>
+    /// Delegate representing a method that handles <see cref="OnChanged"/> events
+    /// </summary>
+    /// <param name="sender">Object that fired the event</param>
+    /// <param name="e">EventArgs that contain data containing changed Cookies</param>
+    public delegate void OnChangedEventHandler(object sender, CookieOnChangedEventArgs e);
+
+    /// <summary>
+    /// Event that is fired when a <see cref="Cookie"/> that can be accessed is set or removed.
+    /// </summary>
+    public event OnChangedEventHandler OnChanged;
+
+    /// <summary>
     /// Retrieves a single <see cref="CookieStore" />, given its name and URL.
     /// 
     /// If more than one <see cref="Cookie" /> with the same name exists for a given URL, the one with the longest path will be returned. 
