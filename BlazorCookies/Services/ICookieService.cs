@@ -27,4 +27,11 @@ public interface ICookieService
     /// <param name="store">The <see cref="CookieStore" /> that contains the <see cref="Cookie" /> objects to be returned</param>
     /// <returns>A list of <see cref="Cookie" /> objects that are in the given <see cref="CookieStore"/>. Only unexpired cookies are returned. The cookies returned will be sorted by path length, longest to shortest. If multiple cookies have the same path length, those with the earliest creation time will be first.</returns>
     public IEnumerable<Cookie> GetAll(CookieStore store);
+
+    /// <summary>
+    /// Retrieves all <see cref="Cookie" /> objects from a single <see cref="CookieStore" /> that match the given (optional) information.
+    /// </summary>
+    /// <param name="details"><see cref="CookieDetails"/> object containing details that can be used to match cookies to be retrieved.</param>
+    /// <returns>A list of <see cref="Cookie" /> objects that match the parameters. Only unexpired cookies are returned. The cookies returned will be sorted by path length, longest to shortest. If multiple cookies have the same path length, those with the earliest creation time will be first.</returns>
+    public IEnumerable<Cookie> GetAll(CookieDetails details);
 }
