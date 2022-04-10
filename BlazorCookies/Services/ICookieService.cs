@@ -67,4 +67,19 @@ public interface ICookieService
     /// </summary>
     /// <returns>All accessible <see cref="CookieStore"/> objects</returns>
     public Task<IEnumerable<CookieStore>> GetAllCookieStoresAsync();
+
+    /// <summary>
+    /// Sets a <see cref="Cookie" /> containing the specified cookie data. This method is equivalent to issuing an HTTP Set-Cookie header during a request to a given URL.
+    /// </summary>
+    /// <param name="cookie"><see cref="Cookie" /> object containing details of the cookie to be set and the value</param>
+    /// <returns><see cref="Cookie" /> object containing details about the cookie that's been set. If the call fails for any reason, null will be returned.</returns>
+    public Task<Cookie> SetAsync(Cookie cookie);
+
+    /// <summary>
+    /// Sets a <see cref="Cookie" /> containing the specified cookie data. This method is equivalent to issuing an HTTP Set-Cookie header during a request to a given URL.
+    /// </summary>
+    /// <param name="details"><see cref="CookieDetails"/> object containing the details of the cookie you wish to set.</param>
+    /// <param name="value">String representing the value of the cookie. If omitted, this is empty by default.</param>
+    /// <returns><see cref="Cookie" /> object containing details about the cookie that's been set. If the call fails for any reason, null will be returned.</returns>
+    public Task<Cookie> SetAsync(CookieDetails details, string value = null);
 }
