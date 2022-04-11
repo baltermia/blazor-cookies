@@ -21,6 +21,8 @@ public interface ICookieService
     /// </summary>
     public event OnChangedEventHandler OnChanged;
 
+    public string DefaultCookiePath { get; set; }
+
     /// <summary>
     /// Retrieves a single <see cref="Cookie" />, given its name and URL.
     /// 
@@ -30,11 +32,11 @@ public interface ICookieService
     /// If no matching Cookie could be found, null is returned.
     /// </para>
     /// </summary>
-    /// <param name="url">String representing the URL with which the Cookie to retrieve is associated. This argument may be a full URL, in which case any data following the URL path (e.g. the query string) is ignored.</param>
     /// <param name="name">String representing the name of the cookie to retrieve.</param>
+    /// <param name="url">String representing the URL with which the Cookie to retrieve is associated. This argument may be a full URL, in which case any data following the URL path (e.g. the query string) is ignored.</param>
     /// <param name="storeId">String representing the ID of the cookie store in which to look for the cookie (as returned by <see cref="GetAllCookieStoresAsync"/>). By default, the current execution context's cookie store will be used.</param>
     /// <returns>A single <see cref="Cookie" />, given its name and URL.</returns>
-    public Task<Cookie> GetAsync(string url, string name, string storeId = null);
+    public Task<Cookie> GetAsync(string name, string url, string storeId = null);
 
     /// <summary>
     /// Retrieves a single <see cref="Cookie" />, given its <see cref="CookieDetails"/>.
@@ -96,4 +98,31 @@ public interface ICookieService
     /// <param name="details"><see cref="CookieDetails" /> specifying the <see cref="Cookie"/> to be deleted.</param>
     /// <returns>A <see cref="Task"/> containing a <see cref="Cookie" /> object containing details about the cookie that's been deleted. If the call fails for any reason, null will be returned.</returns>
     public Task<Cookie> RemoveAsync(CookieDetails details);
+
+    /// <summary>
+    /// Retrieves a single <see cref="Cookie" />, given its <see cref="CookieDetails"/>.
+    /// <para>
+    /// If more than one <see cref="Cookie" /> with the same name exists for a given URL, the one with the longest path will be returned. 
+    /// For Cookies with the same path length, the Cookie with the earliest creation time will be returned. 
+    /// If no matching Cookie could be found, null is returned.
+    /// </para>
+    /// </summary>
+    /// <param name="details"><see cref="CookieDetails"/> object containing details that can be used to match cookies to be retrieved.</param>
+    /// <returns>A single <see cref="Cookie" />, given its <see cref="CookieDetails"/></returns>
+    public Cookie this[CookieDetails details] { get; set; }
+
+    /// <summary>
+    /// Retrieves a single <see cref="Cookie" />, given its name and URL.
+    /// 
+    /// <para>
+    /// If more than one <see cref="Cookie" /> with the same name exists for a given URL, the one with the longest path will be returned. 
+    /// For Cookies with the same path length, the Cookie with the earliest creation time will be returned. 
+    /// If no matching Cookie could be found, null is returned.
+    /// </para>
+    /// </summary>
+    /// <param name="url">String representing the URL with which the Cookie to retrieve is associated. This argument may be a full URL, in which case any data following the URL path (e.g. the query string) is ignored.</param>
+    /// <param name="name">String representing the name of the cookie to retrieve.</param>
+    /// <param name="storeId">String representing the ID of the cookie store in which to look for the cookie (as returned by <see cref="GetAllCookieStoresAsync"/>). By default, the current execution context's cookie store will be used.</param>
+    /// <returns>A single <see cref="Cookie" />, given its name and URL.</returns>
+    public Cookie this[string name, string url = null, string storeId = null] { get; set; }
 }
