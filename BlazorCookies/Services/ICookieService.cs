@@ -21,6 +21,12 @@ public interface ICookieService
     /// </summary>
     public event OnChangedEventHandler OnChanged;
 
+    /// <summary>
+    /// The default Path/Url that is used when creating/setting <see cref="Cookie" /> objects and no path/url is given.
+    /// <para>
+    /// Used in <see cref="GetAsync" />, <see cref="SetAsync" />, <see cref="RemoveAsync" /> and <see cref="this[CookieDetails]" />
+    /// </para>
+    /// </summary>
     public string DefaultCookiePath { get; set; }
 
     /// <summary>
