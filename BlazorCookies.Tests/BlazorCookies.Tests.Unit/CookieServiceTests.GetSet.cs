@@ -23,7 +23,8 @@ namespace BlazorCookies.Tests.Unit
             Cookie cookieGet = await cookieService.GetAsync(details);
 
             // Assert
-            Assert.That(cookie.Value, Is.EqualTo(""));
+            Assert.That(value, Is.EqualTo(cookieGet.Value));
+            Assert.That(cookieGet, Is.EqualTo(cookieSet));
         }
     }
 }
