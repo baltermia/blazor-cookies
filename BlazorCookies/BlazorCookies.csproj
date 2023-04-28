@@ -3,6 +3,20 @@
   <PropertyGroup>
     <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
 	  <LangVersion>10</LangVersion>
+
+    <RootNamespace>BlazorCookies</RootNamespace>
+    <PackageId>BlazorCookies</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Baltermia Clopath</Authors>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/baltermia/blazor-cookies/</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>A simple to use API to read and write Cookies in Blazor. No need for JSInterop anymore!</Description>
+    <PackageReleaseNotes>Initial Release</PackageReleaseNotes>
+    <Copyright>Copyright (c) 2023 Baltermia Clopath</Copyright>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <AssemblyName>BlazorCookies</AssemblyName>
+
   </PropertyGroup>
 
   
@@ -15,7 +29,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\js\" />
+    <None Include="..\LICENSE" Pack="true" />
+    <None Include="..\README.md" Pack="true" />
   </ItemGroup>
 
 </Project>
