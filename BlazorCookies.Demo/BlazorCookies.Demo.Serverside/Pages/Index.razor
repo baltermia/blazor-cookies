@@ -1,4 +1,8 @@
 ﻿@page "/"
+
 @inject ICookieService<Index> cookies
+@inject ICookieService nonGeneric
+
 
 <p>Default Cookies-Path: @cookies.DefaultCookiePath</p>
+<p>Non-Generic: @nonGeneric.DefaultCookiePath</p>
