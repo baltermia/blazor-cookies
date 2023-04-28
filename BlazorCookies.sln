@@ -6,8 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCookies", "BlazorCookies\BlazorCookies.csproj", "{6E38A07D-32A3-4C11-ABD9-7BC545019ED7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCookies.Demo.WASM", "BlazorCookies.Demo\BlazorCookies.Demo.WASM\BlazorCookies.Demo.WASM.csproj", "{A34A8DFC-FFD5-4B56-869B-6CD35BA7A258}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6E38A07D-32A3-4C11-ABD9-7BC545019ED7} = {6E38A07D-32A3-4C11-ABD9-7BC545019ED7}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCookies.Demo.Serverside", "BlazorCookies.Demo\BlazorCookies.Demo.Serverside\BlazorCookies.Demo.Serverside.csproj", "{63B29138-7612-48F1-B7A0-94B8563ADADE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6E38A07D-32A3-4C11-ABD9-7BC545019ED7} = {6E38A07D-32A3-4C11-ABD9-7BC545019ED7}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCookies.Infrastructure.Build", "BlazorCookies.Infrastructure.Build\BlazorCookies.Infrastructure.Build.csproj", "{72EFB827-7CA7-40F0-A826-F2C7705D9D77}"
 EndProject
