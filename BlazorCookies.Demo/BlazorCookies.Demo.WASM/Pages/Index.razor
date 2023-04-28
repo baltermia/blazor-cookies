@@ -1,3 +1,4 @@
 ﻿@page "/"
+@inject ICookieService<Index> cookies
 
-<h1>Hello, world!</h1>
+<p>Default Cookies-Path: @cookies.DefaultCookiePath</p>
