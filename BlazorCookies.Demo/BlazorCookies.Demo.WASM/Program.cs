@@ -10,6 +10,8 @@ namespace BlazorCookies.Demo.WASM
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("#app");
 
+            builder.Services.AddBlazorCookies(typeof(Program).Namespace); 
+            
             await builder.Build().RunAsync();
         }
     }
