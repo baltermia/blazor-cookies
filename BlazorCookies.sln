@@ -9,9 +9,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCookies.Demo.WASM", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCookies.Demo.Serverside", "BlazorCookies.Demo\BlazorCookies.Demo.Serverside\BlazorCookies.Demo.Serverside.csproj", "{63B29138-7612-48F1-B7A0-94B8563ADADE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCookies.Tests.Unit", "BlazorCookies.Tests.Unit\BlazorCookies.Tests.Unit.csproj", "{C4E26C54-A104-48BD-B1CE-9A02AF4F46E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCookies.Infrastructure.Build", "BlazorCookies.Infrastructure.Build\BlazorCookies.Infrastructure.Build.csproj", "{72EFB827-7CA7-40F0-A826-F2C7705D9D77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorCookies.Infrastructure.Build", "BlazorCookies.Infrastructure.Build\BlazorCookies.Infrastructure.Build.csproj", "{72EFB827-7CA7-40F0-A826-F2C7705D9D77}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{31657F68-5929-4025-952B-4F4A12476B81}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5BD239F2-5B6A-4F72-AF22-5800559184DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{77CC4DCE-41F5-4B77-9206-1B9C44602AEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B981A594-07AD-4AC3-BA95-DADD9624F84B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorCookies.Tests.Unit", "BlazorCookies.Tests\BlazorCookies.Tests.Unit\BlazorCookies.Tests.Unit.csproj", "{FA06F652-D589-42B4-86B4-2358174F9B1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,17 +39,24 @@ Global
 		{63B29138-7612-48F1-B7A0-94B8563ADADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63B29138-7612-48F1-B7A0-94B8563ADADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63B29138-7612-48F1-B7A0-94B8563ADADE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C4E26C54-A104-48BD-B1CE-9A02AF4F46E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C4E26C54-A104-48BD-B1CE-9A02AF4F46E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C4E26C54-A104-48BD-B1CE-9A02AF4F46E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C4E26C54-A104-48BD-B1CE-9A02AF4F46E1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72EFB827-7CA7-40F0-A826-F2C7705D9D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{72EFB827-7CA7-40F0-A826-F2C7705D9D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72EFB827-7CA7-40F0-A826-F2C7705D9D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72EFB827-7CA7-40F0-A826-F2C7705D9D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA06F652-D589-42B4-86B4-2358174F9B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA06F652-D589-42B4-86B4-2358174F9B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA06F652-D589-42B4-86B4-2358174F9B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA06F652-D589-42B4-86B4-2358174F9B1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6E38A07D-32A3-4C11-ABD9-7BC545019ED7} = {5BD239F2-5B6A-4F72-AF22-5800559184DD}
+		{A34A8DFC-FFD5-4B56-869B-6CD35BA7A258} = {31657F68-5929-4025-952B-4F4A12476B81}
+		{63B29138-7612-48F1-B7A0-94B8563ADADE} = {31657F68-5929-4025-952B-4F4A12476B81}
+		{72EFB827-7CA7-40F0-A826-F2C7705D9D77} = {77CC4DCE-41F5-4B77-9206-1B9C44602AEC}
+		{FA06F652-D589-42B4-86B4-2358174F9B1C} = {B981A594-07AD-4AC3-BA95-DADD9624F84B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {76DC6B65-8A14-44EA-ADEC-36322DBEC744}
