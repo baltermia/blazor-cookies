@@ -1,14 +1,16 @@
 {
-    "compilerOptions": {
-        "module": "ESNext",
-        "target": "ES2015",
-        "noImplicitAny": true,
-        "noEmitOnError": true,
-        "removeComments": true,
-        "strict": true,
-        "outDir": "wwwroot/js/",
-        "rootDir": "Scripts"
-    },
-    "include": [ "**/*.ts" ],
-    "compileOnSave": true
+  "compilerOptions": {
+    "incremental": true,
+    "lib": [ "ES2020", "DOM" ],
+    "module": "CommonJS",
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "outDir": "wwwroot/js/",
+    "removeComments": true,
+    "rootDir": "Scripts",
+    "strict": true,
+    "target": "ES6"
+  },
+  "include": [ "**/*.ts" ],
+  "compileOnSave": true
 }
