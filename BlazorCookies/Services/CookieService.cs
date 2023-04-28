@@ -1,4 +1,5 @@
-﻿using BlazorCookies.Models;
+﻿using BlazorCookies.Interop;
+using BlazorCookies.Models;
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ internal class CookieService<T> : CookieService, ICookieService<T>
 /// </summary>
 internal class CookieService : ICookieService
 {
+    private readonly CookieInterop _interop;
+
     public string DefaultCookiePath { init; get; }
 
     /// <summary>
@@ -32,7 +35,7 @@ internal class CookieService : ICookieService
     public CookieService(IJSRuntime jsRuntime, string defaultCookiePath)
     {
         DefaultCookiePath = defaultCookiePath;
-        // IJSRuntime will be passed further down to use JS-Interop
+        _interop = new(jsRuntime);
     }
 
     public Cookie this[CookieDetails details] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
