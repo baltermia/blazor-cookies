@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 
 namespace BlazorCookies.Services;
 
+public interface ICookieService<T> : ICookieService { }
+
 /// <summary>
 /// Interface representing the Service which gets & sets cookies, and fires events when they change.
 /// </summary>
@@ -27,7 +29,7 @@ public interface ICookieService
     /// Used in <see cref="GetAsync" />, <see cref="SetAsync" />, <see cref="RemoveAsync" /> and <see cref="this[CookieDetails]" />
     /// </para>
     /// </summary>
-    public string DefaultCookiePath { get; set; }
+    public string DefaultCookiePath { get; }
 
     /// <summary>
     /// Retrieves a single <see cref="Cookie" />, given its name and URL.
