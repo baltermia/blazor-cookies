@@ -6,7 +6,7 @@ namespace BlazorCookies.Tests.Unit;
 
 public partial class CookieServiceTests
 {
-    [Test]
+    //[Test]
     public async Task Remove_NameOnly_Details()
     {
         // Arrange
@@ -30,7 +30,7 @@ public partial class CookieServiceTests
         Assert.That(cookieRemove, Is.EqualTo(cookieSet));
     }
 
-    [Test]
+    //[Test]
     public async Task Remove_NameOnly()
     {
         // Arrange

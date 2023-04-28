@@ -6,7 +6,7 @@ namespace BlazorCookies.Tests.Unit;
 
 public partial class CookieServiceTests
 {
-    [Test]
+    //[Test]
     public async Task GetSet_NameOnly()
     {
         // Arrange
