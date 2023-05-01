@@ -117,7 +117,7 @@ public interface ICookieService
     /// </summary>
     /// <param name="details"><see cref="CookieDetails"/> object containing details that can be used to match cookies to be retrieved.</param>
     /// <returns>A single <see cref="Cookie" />, given its <see cref="CookieDetails"/></returns>
-    public Cookie this[CookieDetails details] { get; set; }
+    public Task<Cookie> this[CookieDetails details] { get; set; }
 
     /// <summary>
     /// Retrieves a single <see cref="Cookie" />, given its name and URL.
@@ -132,5 +132,5 @@ public interface ICookieService
     /// <param name="name">String representing the name of the cookie to retrieve.</param>
     /// <param name="storeId">String representing the ID of the cookie store in which to look for the cookie (as returned by <see cref="GetAllCookieStoresAsync"/>). By default, the current execution context's cookie store will be used.</param>
     /// <returns>A single <see cref="Cookie" />, given its name and URL.</returns>
-    public Cookie this[string name, string url = null, string storeId = null] { get; set; }
+    public Task<Cookie> this[string name, string url = null, string storeId = null] { get; set; }
 }
