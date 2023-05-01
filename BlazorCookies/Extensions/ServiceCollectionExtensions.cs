@@ -1,5 +1,6 @@
 ﻿using BlazorCookies.Services;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.JSInterop;
 
 namespace BlazorCookies;
@@ -21,14 +22,20 @@ public static class ServiceCollectionExtensions
     /// Add both non-generic and generic ICookieServices
     /// </summary>
     /// <param name="defaultCookiePath">The default cookie-path to all non-generic ICookieService-Cookies: <see cref="ICookieService.DefaultCookiePath"/></param>
-    public static IServiceCollection AddBlazorCookies(this IServiceCollection services, string defaultCookiePath) =>
-        services.AddTransient<ICookieService, CookieService>(provider => 
-                    new CookieService(provider.GetRequiredService<IJSRuntime>(), defaultCookiePath))
-                .AddGenericBlazorCookies();
+    public static IServiceCollection AddBlazorCookies(this IServiceCollection services, string defaultCookiePath)
+    {
+        services.TryAddTransient<ICookieService>(provider =>
+                    new CookieService(provider.GetRequiredService<IJSRuntime>(), defaultCookiePath));
+        
+        return services.AddGenericBlazorCookies();
+    }
 
     /// <summary>
     /// Add generic ICookieServices
     /// </summary>
-    public static IServiceCollection AddGenericBlazorCookies(this IServiceCollection services) =>
-        services.AddScoped(typeof(ICookieService<>), typeof(CookieService<>));
+    public static IServiceCollection AddGenericBlazorCookies(this IServiceCollection services)
+    {
+        services.TryAddScoped(typeof(ICookieService<>), typeof(CookieService<>));
+        return services;
+    }
 }
