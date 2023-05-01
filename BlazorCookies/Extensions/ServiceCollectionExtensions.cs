@@ -14,8 +14,7 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <typeparam name="T">The Assembly-Fullname is used as <see cref="ICookieService.DefaultCookiePath"/></typeparam>
     public static IServiceCollection AddBlazorCookies<T>(this IServiceCollection services) =>
-        services.AddTransient<ICookieService, CookieService>(provider => 
-                    new CookieService(provider.GetRequiredService<IJSRuntime>(), typeof(T).FullName))
+        services.AddBlazorCookies(typeof(T).FullName)
                 .AddGenericBlazorCookies();
 
     /// <summary>
