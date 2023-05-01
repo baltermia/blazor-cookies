@@ -21,7 +21,7 @@ namespace BlazorCookies.Demo.Serverside
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddBlazorCookies(typeof(Program).Namespace);
+            services.AddBlazorCookies();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
