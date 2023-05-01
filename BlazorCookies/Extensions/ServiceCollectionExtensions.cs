@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.JSInterop;
+using System.Diagnostics;
 
 namespace BlazorCookies;
 
@@ -10,6 +11,13 @@ namespace BlazorCookies;
 /// </summary>
 public static class ServiceCollectionExtensions
 {
+    /// <summary>
+    /// Add both non-generic and generic ICookieServices, the <see cref="ICookieService.DefaultCookiePath" /> is determined by the callees namespace
+    /// </summary>
+    public static IServiceCollection AddBlazorCookies(this IServiceCollection services) =>
+        services.AddBlazorCookies(new StackTrace(1, false).GetFrame(0).GetMethod().DeclaringType.Namespace)
+                .AddGenericBlazorCookies();
+
     /// <summary>
     /// Add both non-generic and generic ICookieServices
     /// </summary>
