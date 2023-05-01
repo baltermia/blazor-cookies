@@ -1,5 +1,6 @@
 ﻿using BlazorCookies.Interop;
 using BlazorCookies.Models;
+using BlazorCookies.Repositories;
 using Microsoft.JSInterop;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,8 @@ internal class CookieService<T> : CookieService, ICookieService<T>
     /// <summary>
     /// Creates a new generic CookieService. The type-argument <see cref="CookieService{T}">T</see> is used to determine the <see cref="CookieService.DefaultCookiePath"/>
     /// </summary>
-    public CookieService(IJSRuntime jsRuntime)
-        : base(jsRuntime, typeof(T).FullName)
+    public CookieService(ICookieRepository repo)
+        : base(repo, typeof(T).FullName)
     { }
 }
 
@@ -25,17 +26,17 @@ internal class CookieService<T> : CookieService, ICookieService<T>
 /// </summary>
 internal class CookieService : ICookieService
 {
-    private readonly CookieInterop _interop;
+    private readonly ICookieRepository _repo;
 
     public string DefaultCookiePath { init; get; }
 
     /// <summary>
     /// Creates a new non-generic CookieSerivce, given a default cookie-path
     /// </summary>
-    public CookieService(IJSRuntime jsRuntime, string defaultCookiePath)
+    public CookieService(ICookieRepository repo, string defaultCookiePath)
     {
         DefaultCookiePath = defaultCookiePath;
-        _interop = new(jsRuntime);
+        _repo = repo;
     }
 
     public Cookie this[CookieDetails details] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
