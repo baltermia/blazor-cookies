@@ -37,13 +37,9 @@ internal class CookieService : ICookieService
         _repo = repo;
     }
 
-    public Task<Cookie> this[CookieDetails details] => GetAsync(details);
-
     public Task<Cookie> this[string name] => GetAsync(name);
 
     public Task<Cookie> GetAsync(string name) => throw new NotImplementedException();
-
-    public Task<Cookie> GetAsync(CookieDetails details) => GetAsync(details.Name);
 
     public Task<IEnumerable<Cookie>> GetAllAsync() => throw new NotImplementedException();
     public Task<Cookie> SetAsync(string name, string value) => SetAsync(new CookieDetails(name), value);

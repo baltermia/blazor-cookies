@@ -29,7 +29,7 @@ public interface ICookieService
     /// </para>
     /// </summary>
     /// <param name="name">String representing the name of the cookie to retrieve.</param>
-    public Task<Cookie> GetAsync(string name);
+    public Task<Cookie> this[string name] { get; }
 
     /// <summary>
     /// Retrieves a single <see cref="Cookie" />, given its name and URL.
@@ -40,8 +40,8 @@ public interface ICookieService
     /// If no matching Cookie could be found, the Value is null.
     /// </para>
     /// </summary>
-    /// <param name="details">Details representing the cookie to retrieve.</param>
-    public Task<Cookie> GetAsync(CookieDetails details);
+    /// <param name="name">String representing the name of the cookie to retrieve.</param>
+    public Task<Cookie> GetAsync(string name);
 
     /// <summary>
     /// Gets all <see cref="Cookie" /> objects
@@ -72,28 +72,4 @@ public interface ICookieService
     /// </summary>
     /// <returns>The <see cref="Cookie"/> that was deleted</returns>
     public Task<Cookie> RemoveAsync(string name);
-
-    /// <summary>
-    /// Retrieves a single <see cref="Cookie" />, given its name and URL.
-    /// 
-    /// <para>
-    /// If more than one <see cref="Cookie" /> with the same name exists for a given URL, the one with the longest path will be returned. 
-    /// For Cookies with the same path length, the Cookie with the earliest creation time will be returned. 
-    /// If no matching Cookie could be found, the Value is null.
-    /// </para>
-    /// </summary>
-    /// <param name="details">Details representing the cookie to retrieve.</param>
-    public Task<Cookie> this[CookieDetails details] { get; }
-
-    /// <summary>
-    /// Retrieves a single <see cref="Cookie" />, given its name and URL.
-    /// 
-    /// <para>
-    /// If more than one <see cref="Cookie" /> with the same name exists for a given URL, the one with the longest path will be returned. 
-    /// For Cookies with the same path length, the Cookie with the earliest creation time will be returned. 
-    /// If no matching Cookie could be found, the Value is null.
-    /// </para>
-    /// </summary>
-    /// <param name="name">String representing the name of the cookie to retrieve.</param>
-    public Task<Cookie> this[string name] { get; }
 }
