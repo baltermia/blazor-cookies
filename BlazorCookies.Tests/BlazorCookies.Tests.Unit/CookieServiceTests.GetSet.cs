@@ -17,7 +17,7 @@ public partial class CookieServiceTests
         // Act
         Cookie cookieSet = await cookieService.SetAsync(details, value);
 
-        Cookie cookieGet = await cookieService.GetAsync(details);
+        Cookie cookieGet = await cookieService.GetAsync(details.Name);
 
         // Assert
         Assert.That(value, Is.EqualTo(cookieGet.Value));

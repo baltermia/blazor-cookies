@@ -19,7 +19,7 @@ public partial class CookieServiceTests
 
         Cookie cookieRemove = await cookieService.RemoveAsync(details);
 
-        Cookie cookieGet = await cookieService.GetAsync(details);
+        Cookie cookieGet = await cookieService.GetAsync(details.Name);
 
         // Assert
         Assert.That(value, Is.EqualTo(cookieGet.Value));
