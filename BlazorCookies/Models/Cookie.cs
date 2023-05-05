@@ -15,6 +15,11 @@ public class Cookie
     /// </summary>
     public string? Value { get; set; }
 
+    /// <summary>
+    /// The path to the cookie (only returned when setting / deleting)
+    /// </summary>
+    public string? Path { get; set; }
+
     internal Cookie(string name, string? value = null)
     {
         Name = name;
