@@ -10,10 +10,7 @@ public partial class CookieServiceTests
     public async Task GetSet_NameOnly()
     {
         // Arrange
-        CookieDetails details = new()
-        {
-            Name = "test-getset_nameonly"
-        };
+        CookieDetails details = new("test-getset_nameonly");
 
         string value = "test-getset_nameonly-value";
 
