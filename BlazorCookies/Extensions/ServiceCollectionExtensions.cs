@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
     /// Add both non-generic and generic ICookieServices, the <see cref="ICookieService.DefaultCookiePath" /> is determined by the callees namespace
     /// </summary>
     public static IServiceCollection AddBlazorCookies(this IServiceCollection services) =>
-        services.AddBlazorCookies(new StackTrace(1, false).GetFrame(0).GetMethod().DeclaringType.Namespace)
+        services.AddBlazorCookies(new StackTrace(1, false).GetFrame(0)?.GetMethod()?.DeclaringType?.Namespace)
                 .AddGenericBlazorCookies();
 
     /// <summary>
@@ -31,7 +31,7 @@ public static class ServiceCollectionExtensions
     /// Add both non-generic and generic ICookieServices
     /// </summary>
     /// <param name="defaultCookiePath">The default cookie-path to all non-generic ICookieService-Cookies: <see cref="ICookieService.DefaultCookiePath"/></param>
-    public static IServiceCollection AddBlazorCookies(this IServiceCollection services, string defaultCookiePath)
+    public static IServiceCollection AddBlazorCookies(this IServiceCollection services, string? defaultCookiePath)
     {
         services.AddCookieRepository()
                 .TryAddScoped<ICookieService>(provider =>
