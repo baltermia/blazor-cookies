@@ -1,6 +1,4 @@
-﻿using BlazorCookies.Models;
-
-namespace BlazorCookies.Enums;
+﻿namespace BlazorCookies.Models;
 
 public enum SameSiteStatus
 {

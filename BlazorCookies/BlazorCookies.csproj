@@ -1,8 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
 	  <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
 
     <RootNamespace>BlazorCookies</RootNamespace>
     <PackageId>BlazorCookies</PackageId>

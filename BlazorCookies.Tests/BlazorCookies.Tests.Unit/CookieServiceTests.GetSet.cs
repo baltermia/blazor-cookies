@@ -10,17 +10,14 @@ public partial class CookieServiceTests
     public async Task GetSet_NameOnly()
     {
         // Arrange
-        CookieDetails details = new()
-        {
-            Name = "test-getset_nameonly"
-        };
+        CookieDetails details = new("test-getset_nameonly");
 
         string value = "test-getset_nameonly-value";
 
         // Act
         Cookie cookieSet = await cookieService.SetAsync(details, value);
 
-        Cookie cookieGet = await cookieService.GetAsync(details);
+        Cookie cookieGet = await cookieService.GetAsync(details.Name);
 
         // Assert
         Assert.That(value, Is.EqualTo(cookieGet.Value));

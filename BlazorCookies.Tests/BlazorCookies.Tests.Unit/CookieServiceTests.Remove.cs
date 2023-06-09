@@ -10,10 +10,7 @@ public partial class CookieServiceTests
     public async Task Remove_NameOnly_Details()
     {
         // Arrange
-        CookieDetails details = new()
-        {
-            Name = "test-remove-nameonly-details"
-        };
+        CookieDetails details = new("test-remove-nameonly-details");
 
         string value = "test-remove-nameonly-details-value";
 
@@ -22,7 +19,7 @@ public partial class CookieServiceTests
 
         Cookie cookieRemove = await cookieService.RemoveAsync(details);
 
-        Cookie cookieGet = await cookieService.GetAsync(details);
+        Cookie cookieGet = await cookieService.GetAsync(details.Name);
 
         // Assert
         Assert.That(value, Is.EqualTo(cookieGet.Value));
@@ -34,19 +31,16 @@ public partial class CookieServiceTests
     public async Task Remove_NameOnly()
     {
         // Arrange
-        Cookie cookie = new()
-        {
-            Name = "test-remove-nameonly"
-        };
+        string name = "test-remove-nameonly";
 
         string value = "test-remove-nameonly-value";
 
         // Act
-        Cookie cookieSet = await cookieService.SetAsync(cookie);
+        Cookie cookieSet = await cookieService.SetAsync(name, value);
 
-        Cookie cookieRemove = await cookieService.RemoveAsync(cookie);
+        Cookie cookieRemove = await cookieService.RemoveAsync(name);
 
-        Cookie cookieGet = await cookieService.GetAsync(cookie.Name, cookie.Path, cookie.StoreId);
+        Cookie cookieGet = await cookieService.GetAsync(name);
 
         // Assert
         Assert.That(value, Is.EqualTo(cookieGet.Value));
